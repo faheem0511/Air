@@ -1,17 +1,33 @@
+/* ===================== */
+/* IMPORTS MUST BE FIRST */
+/* ===================== */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+
+/* ===================== */
+/* TAILWIND */
+/* ===================== */
 @import "tailwindcss";
 
+/* ===================== */
+/* THEME VARIABLES */
+/* ===================== */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --aero-blue-dark: #1b5a9e;
+  --aero-blue-light: #4db8e8;
+  --aero-green-dark: #5a8f2d;
+  --aero-green-light: #7cb342;
+
+  --aero-neutral-900: #0f172a;
+  --aero-neutral-700: #334155;
+  --aero-neutral-100: #f1f5f9;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ===================== */
+/* DARK MODE */
+/* ===================== */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,8 +35,125 @@
   }
 }
 
+/* ===================== */
+/* GLOBAL BASE */
+/* ===================== */
+* {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+/* ===================== */
+/* ANIMATIONS */
+/* ===================== */
+.hero-content {
+  animation: fadeInScale 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease-out both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================== */
+/* STAGGER DELAYS */
+/* ===================== */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.15s; }
+.stagger-5 { animation-delay: 0.25s; }
+.stagger-6 { animation-delay: 0.35s; }
+
+/* ===================== */
+/* PREMIUM UI */
+/* ===================== */
+.premium-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-card:hover {
+  transform: translateY(-8px);
+}
+
+.blue-glow {
+  box-shadow: 0 0 40px rgba(27, 90, 158, 0.15);
+}
+
+.green-glow {
+  box-shadow: 0 0 40px rgba(124, 179, 66, 0.15);
+}
+
+/* ===================== */
+/* TEXT UTILITIES */
+/* ===================== */
+.text-gradient-blue {
+  background: linear-gradient(
+    135deg,
+    var(--aero-blue-dark),
+    var(--aero-blue-light)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-green {
+  background: linear-gradient(
+    135deg,
+    var(--aero-green-dark),
+    var(--aero-green-light)
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.divider-line {
+  width: 60px;
+  height: 4px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--aero-blue-dark),
+    var(--aero-green-light)
+  );
 }
