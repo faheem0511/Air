@@ -1,134 +1,73 @@
-// TestimonialsSection.jsx - Premium Client Testimonials Section
-
-import { Star, Quote } from "lucide-react";
-
-export default function TestimonialsSection() {
+"use client";
+export default function Testimonials() {
   const testimonials = [
     {
-      id: 1,
-      name: "Rajesh Kumar",
-      company: "Clean Air Solutions",
-      text: "AeroPure has been our trusted supplier for years. Excellent quality and service.",
-      rating: 5,
+      
+      author: "Faheem Faizan",
+      text: "AeroPure has been our trusted supplier for years. Excellent quality and service."
     },
     {
-      id: 2,
-      name: "Priya Sharma",
-      company: "Green Tech Industries",
-      text: "Best prices in Mumbai. Delivery is always on time.",
-      rating: 5,
+     
+      author: "Talha Pisuwala",
+      text: "Best prices in Mumbai. Delivery is always on time."
     },
     {
-      id: 3,
-      name: "Mohammed Ali",
-      company: "Fresh Air Enterprises",
-      text: "Reliable partner with consistent quality.",
-      rating: 5,
+ 
+      author: "Hitesh Setpal",
+      text: "Reliable partner with consistent quality."
+    },
+      {
+      author: "Rafiya Shaikh",
+      text: "Exceptional service and quality products."
     },
   ];
 
   return (
-    <section className="relative py-32 bg-gradient-to-b from-white via-slate-50 to-white overflow-hidden">
-
-      {/* Background Accents */}
-      <div className="absolute -top-32 -left-32 w-[450px] h-[450px] bg-blue-200/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 w-[450px] h-[450px] bg-green-200/20 rounded-full blur-3xl" />
-
-      <div className="relative container mx-auto px-4">
-
-        {/* ================= HEADER ================= */}
-        <div className="text-center mb-24 fade-in">
-
-          <span className="inline-block mb-4 px-6 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold tracking-wide">
-            Testimonials
-          </span>
-
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
-            Client{" "}
-            <span className="text-gradient-blue">Testimonials</span>
-          </h2>
-
-          <div className="divider-line" />
-
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Trusted by professionals and businesses across Mumbai
-          </p>
-
-        </div>
-
-
-        {/* ================= TESTIMONIALS GRID ================= */}
-        <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-
-          {testimonials.map((item, i) => (
-            <div
-              key={item.id}
-              className={`
-                slide-up stagger-${i + 1}
-                group relative
-                bg-white/80 backdrop-blur-md
-                p-10 rounded-3xl
-                border border-slate-200
-                shadow-md
-                hover:shadow-2xl
-                hover:-translate-y-2
-                transition-all duration-500
-                overflow-hidden
-              `}
-            >
-
-              {/* Hover Glow */}
-              <div className="absolute inset-0 rounded-3xl bg-blue-300/20 opacity-0 group-hover:opacity-100 blur-xl transition duration-500" />
-
-              <div className="relative z-10">
-
-                {/* Quote Icon */}
-                <div className="mb-6 flex items-center justify-between">
-                  <Quote className="w-8 h-8 text-blue-200 group-hover:text-blue-400 transition" />
-
-                  {/* Stars */}
-                  <div className="flex">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 text-yellow-400 fill-yellow-400"
-                      />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-lg text-slate-700 leading-relaxed mb-10 italic">
-                  “{item.text}”
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-slate-200">
-
-                  {/* Avatar */}
-                  <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-green-600 flex items-center justify-center shadow-lg">
-                    <span className="text-white font-bold text-xl">
-                      {item.name.charAt(0)}
-                    </span>
-                  </div>
-
-                  <div>
-                    <p className="font-bold text-slate-900 text-lg">
-                      {item.name}
-                    </p>
-                    <p className="text-sm text-slate-500">
-                      {item.company}
-                    </p>
-                  </div>
-
-                </div>
-
+    <section className="py-12 md:py-20 relative h-auto min-h-[100vh] md:h-[100vh]">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://grandlanetransfer.com/upload/news/miuxduouu_.jpg')"
+        }}
+      />
+      
+      {/* Gradient Overlay for better visual hierarchy */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50" />
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 md:px-6 lg:px-4 relative z-10 flex flex-col justify-center h-full">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-white drop-shadow-lg px-4">
+          What Our Clients Say
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-sm sm:max-w-lg md:max-w-4xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="group relative bg-white/10 backdrop-blur-md border border-white/20 p-6 md:p-8 rounded-xl md:rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 hover:bg-white/15">
+              {/* Decorative quote icon */}
+              <div className="absolute -top-2 -left-2 md:-top-3 md:-left-3 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+                <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                </svg>
               </div>
+              
+              {/* Card content */}
+              <div className="pt-3 md:pt-4">
+                <p className="text-base md:text-lg italic mb-4 md:mb-6 text-white leading-relaxed font-light">
+                  "{testimonial.text}"
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="h-px bg-gradient-to-r from-transparent via-white/30 to-transparent flex-1 mr-3 md:mr-4"></div>
+                  <p className="font-semibold text-white/90 text-xs md:text-sm tracking-wide">
+                    {testimonial.author}
+                  </p>
+                </div>
+              </div>
+              
+              {/* Subtle glow effect on hover */}
+              <div className="absolute inset-0 rounded-xl md:rounded-2xl bg-gradient-to-br from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
             </div>
           ))}
-
         </div>
-
       </div>
     </section>
   );

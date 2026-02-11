@@ -25,7 +25,7 @@ export default function HomePage() {
         <Navbar />
         <HeroSection companyInfo={companyInfo} />
         <AboutSection companyInfo={companyInfo} />
-        <FounderSection companyInfo={companyInfo} />
+        {/* <FounderSection companyInfo={companyInfo} /> */}
         <BenefitsSection />
         <TestimonialsSection />
         <CTASection />

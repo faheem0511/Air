@@ -1,4 +1,3 @@
-// BenefitsSection.jsx - Premium Why Choose AeroPure Section
 
 import {
   Shield,
@@ -7,168 +6,202 @@ import {
   Package,
   Truck,
   Headphones,
+  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
 export default function BenefitsSection() {
   const benefits = [
     {
       id: 1,
-      title: "High Quality",
-      description: "International-standard premium air filters",
+      title: "Premium Quality",
+      description: "International-standard filters with certified performance",
       icon: Shield,
-      color: "blue",
+      gradient: "from-blue-500 to-cyan-600",
+      stat: "100%",
+      statLabel: "Certified"
     },
     {
       id: 2,
-      title: "Affordable Pricing",
-      description: "Best wholesale & retail pricing in Mumbai",
+      title: "Best Pricing",
+      description: "Competitive wholesale & retail rates across Mumbai",
       icon: DollarSign,
-      color: "green",
+      gradient: "from-emerald-500 to-green-600",
+      stat: "30%",
+      statLabel: "Savings"
     },
     {
       id: 3,
-      title: "Trusted Supplier",
-      description: "Serving customers with reliability & trust",
+      title: "Trusted Brand",
+      description: "5+ years serving customers with reliability",
       icon: Award,
-      color: "blue",
+      gradient: "from-blue-500 to-indigo-600",
+      stat: "1000+",
+      statLabel: "Happy Clients"
     },
     {
       id: 4,
-      title: "Wide Range",
-      description: "Compatible with major purifier brands",
+      title: "Wide Selection",
+      description: "Compatible with all major purifier brands",
       icon: Package,
-      color: "green",
+      gradient: "from-green-500 to-emerald-600",
+      stat: "50+",
+      statLabel: "Brands"
     },
     {
       id: 5,
       title: "Fast Delivery",
-      description: "Quick delivery across Mumbai",
+      description: "Same-day delivery available across Mumbai",
       icon: Truck,
-      color: "blue",
+      gradient: "from-cyan-500 to-blue-600",
+      stat: "24hrs",
+      statLabel: "Delivery"
     },
     {
       id: 6,
       title: "Expert Support",
-      description: "Professional guidance & assistance",
+      description: "Professional guidance & 24/7 assistance",
       icon: Headphones,
-      color: "green",
+      gradient: "from-emerald-500 to-teal-600",
+      stat: "24/7",
+      statLabel: "Support"
     },
   ];
 
+  const quickFeatures = [
+    "Genuine Products Only",
+    "Easy Returns Policy",
+    "Warranty Included",
+    "Expert Consultation"
+  ];
+
   return (
-    <section className="relative py-32 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden">
+    <section className="relative py-16 sm:py-20 lg:py-28 bg-white overflow-hidden">
 
-      {/* Background Accents */}
-      <div className="absolute -top-32 -left-32 w-[450px] h-[450px] bg-blue-200/20 rounded-full blur-3xl" />
-      <div className="absolute -bottom-32 -right-32 w-[450px] h-[450px] bg-green-200/20 rounded-full blur-3xl" />
+      {/* Animated Background Elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-emerald-100 to-blue-100 rounded-full blur-3xl opacity-30 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-blue-100 to-emerald-100 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }} />
+      
+      {/* Dot Pattern */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: "radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)",
+          backgroundSize: "32px 32px",
+        }}
+      />
 
-      <div className="relative container mx-auto px-4">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ================= HEADER ================= */}
-        <div className="text-center mb-24 fade-in">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20 max-w-4xl mx-auto opacity-0 animate-[slideUp_0.6s_ease-out_0.1s_forwards]">
+          
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-50 to-blue-50 border border-emerald-200 mb-6 shadow-sm">
+            <Sparkles className="w-4 h-4 text-emerald-600 animate-pulse" />
+            <span className="text-sm font-bold text-emerald-700 tracking-wide">
+              WHY CHOOSE AEROPURE
+            </span>
+          </div>
 
-          <span className="inline-block mb-4 px-6 py-2 rounded-full bg-green-50 text-green-700 text-sm font-semibold tracking-wide">
-            Our Strengths
-          </span>
-
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-slate-900">
-            Why Choose{" "}
-            <span className="text-gradient-green">AeroPure</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 mb-4 sm:mb-6 leading-tight">
+            Benefits That Make
+            <br className="hidden sm:block" />
+            <span className="bg-gradient-to-r from-emerald-600 via-green-600 to-blue-600 bg-clip-text text-transparent">
+              All The Difference
+            </span>
           </h2>
 
-          <div className="divider-line" />
-
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed px-4">
             Quality, affordability, and trust in every filter we deliver
           </p>
 
         </div>
 
-
         {/* ================= BENEFITS GRID ================= */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-8 sm:mb-16 lg:mb-15">
 
-          {benefits.map((item, i) => (
+          {benefits.map((benefit, idx) => (
             <div
-              key={item.id}
-              className={`
-                slide-up stagger-${i + 1}
-                group relative
-                bg-white/90 backdrop-blur-sm
-                p-10 rounded-3xl
-                border border-slate-200
-                shadow-md
-                hover:shadow-2xl
-                hover:-translate-y-2
-                transition-all duration-500
-                overflow-hidden
-              `}
+              key={benefit.id}
+              className="group relative bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 border-2 border-slate-100 hover:border-emerald-200 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 opacity-0 animate-[slideUp_0.6s_ease-out_forwards]"
+              style={{ animationDelay: `${0.2 + idx * 0.1}s` }}
             >
 
-              {/* Glow Layer */}
-              <div
-                className={`
-                  absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100
-                  transition duration-500 blur-xl
-                  ${
-                    item.color === "blue"
-                      ? "bg-blue-300/25"
-                      : "bg-green-300/25"
-                  }
-                `}
-              />
+              {/* Gradient Background on Hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 via-white to-blue-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Content */}
-              <div className="relative z-10">
+              <div className="relative">
 
-                {/* Icon */}
-                <div
-                  className={`
-                    w-16 h-16 mb-8 rounded-2xl
-                    ${
-                      item.color === "blue"
-                        ? "bg-blue-600"
-                        : "bg-green-600"
-                    }
-                    flex items-center justify-center
-                    shadow-xl
-                    group-hover:scale-110
-                    group-hover:rotate-3
-                    transition-transform duration-300
-                  `}
-                >
-                  <item.icon className="w-8 h-8 text-white" />
+                {/* Icon with Gradient */}
+                <div className="relative mb-6">
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br ${benefit.gradient} flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-xl`}>
+                    <benefit.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
+                  </div>
+                  {/* Glow Effect */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500`} />
                 </div>
 
                 {/* Title */}
-                <h3 className="font-bold text-2xl mb-4 text-slate-900">
-                  {item.title}
+                <h3 className="font-black text-xl sm:text-2xl mb-3 text-slate-900 group-hover:text-emerald-700 transition-colors duration-300">
+                  {benefit.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-600 leading-relaxed text-lg">
-                  {item.description}
+                <p className="text-slate-600 leading-relaxed text-sm sm:text-base mb-6">
+                  {benefit.description}
                 </p>
 
-                {/* Accent Line */}
-                <div
-                  className={`
-                    mt-6 h-[3px] w-12 rounded-full transition-all duration-500
-                    ${
-                      item.color === "blue"
-                        ? "bg-blue-500 group-hover:w-20"
-                        : "bg-green-500 group-hover:w-20"
-                    }
-                  `}
-                />
-
+                {/* Stat Badge */}
+                <div className="inline-flex items-center gap-3 px-4 py-2 bg-slate-50 rounded-xl border border-slate-200 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-all duration-300">
+                  <div className={`text-2xl sm:text-3xl font-black bg-gradient-to-r ${benefit.gradient} bg-clip-text text-transparent`}>
+                    {benefit.stat}
+                  </div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                    {benefit.statLabel}
+                  </div>
+                </div>
               </div>
-
             </div>
           ))}
 
         </div>
+        {/* ================= QUICK FEATURES BANNER ================= */}
+        <div className="max-w-5xl mx-auto opacity-0 animate-[slideUp_0.8s_ease-out_0.8s_forwards]">
+          
+          <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8 sm:p-10 lg:p-12">
+            
+            {/* Animated Pattern */}
+            <div 
+              className="absolute inset-0 opacity-5"
+              style={{
+                backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+                backgroundSize: "40px 40px",
+              }}
+            />
 
+            {/* Gradient Orbs */}
+            <div className="absolute -top-20 -right-20 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+
+            <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+              
+              {quickFeatures.map((feature, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-300">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-400 group-hover:text-white transition-colors duration-300" />
+                  </div>
+                  <span className="text-white font-semibold text-sm sm:text-base group-hover:text-emerald-400 transition-colors duration-300">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

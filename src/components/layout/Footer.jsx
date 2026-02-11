@@ -24,33 +24,19 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 py-14">
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
 
-          {/* Brand Section */}
-          <div className="space-y-4">
-
-            <div className="flex items-center gap-3">
+            <div className="flex-col-1 items-center ">
               <Image
                 src="/logo.png"
                 alt="AeroPure Logo"
-                width={60}
-                height={60}
+                width={250}
+                height={150}
                 priority
                 className="object-contain"
               />
 
-              <div>
-                <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
-                  {companyInfo.name}
-                </h3>
-
-                <p className="text-xs text-gray-500 tracking-wide">
-                  {companyInfo.tagline}
-                </p>
-              </div>
-            </div>
-
-            <p className="text-sm text-gray-600 leading-relaxed max-w-sm">
+            <p className="text-sm text-gray-600 max-w-sm">
               Your trusted wholesale & retail partner for high-quality air
               purifier filters. Helping homes and businesses breathe cleaner,
               healthier air every day.
@@ -71,8 +57,8 @@ export default function Footer() {
               {[
                 { name: "Home", path: "/" },
                 { name: "About Us", path: "/aboutus" },
-                { name: "Products", path: "/products" },
-                { name: "Contact", path: "/contact" },
+                { name: "Products", path: "/product" },
+                { name: "Contact", path: "/contactus" },
               ].map((item) => (
                 <li key={item.path}>
                   <Link
@@ -88,6 +74,7 @@ export default function Footer() {
             </ul>
 
           </div>
+
 
           {/* Contact */}
           <div className="space-y-4">

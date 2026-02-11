@@ -1,196 +1,333 @@
 "use client";
 
 import Image from "next/image";
-import { Zap, ShieldCheck, Clock, Layers } from "lucide-react";
+import Navbar from "../layout/Navbar";
+import Footer from "../layout/Footer";
+import {
+  ShieldCheck,
+  Users,
+  TrendingUp,
+  Leaf,
+  Award,
+  Target,
+} from "lucide-react";
 
-export default function AboutPage() {
+export default function AboutUs() {
   return (
-    <div className="bg-white text-slate-900">
+    <>
+      <Navbar />
 
-      {/* ================= HERO ================= */}
-      <section className="relative h-[90vh] overflow-hidden">
+      <main className="bg-white text-slate-900 overflow-hidden">
 
-        {/* Background Image */}
-        <Image
-          src="/h2.jpg" // Replace with your image
-          alt="Mountains Clean Air"
-          fill
-          className="object-cover"
-          priority
-        />
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/40" />
+        {/* ================= HERO ================= */}
+        <section className="relative min-h-[80vh] flex items-center justify-center">
 
-        {/* Content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4 text-white">
-
-          <p className="tracking-widest text-sm mb-4 uppercase">
-            Air Purifier
-          </p>
-
-          <h1 className="text-4xl md:text-6xl font-light mb-6">
-            For The Air You Breathe
-          </h1>
-
-          <p className="max-w-xl text-white/90 mb-8">
-            Give yourself and those around you peace of mind with our
-            revolutionary air purification technology.
-          </p>
-
-          <button className="px-8 py-3 rounded-full bg-white text-black font-medium hover:bg-gray-100 transition">
-            Find Out More
-          </button>
-
-        </div>
-
-        {/* Curve Shape */}
-        <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-          <svg
-            viewBox="0 z0 1450 100"
-            className="w-full h-[100px]"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,60 C240,100 480,0 720,30 960,60 1200,100 1440,40 L1440,0 L0,0 Z"
-              fill="#ffffff"
+          {/* Background */}
+          <div className="absolute inset-0">
+            <Image
+              src="/h2.jpg"
+              alt="About AeroPure"
+              fill
+              className="object-cover"
+              priority
             />
-          </svg>
-        </div>
-
-      </section>
-
-
-      {/* ================= INTRO ================= */}
-      <section className="py-24 text-center px-4">
-
-        <p className="italic text-gray-500 mb-3">
-          “Clean air starts here”
-        </p>
-
-        <h2 className="text-3xl md:text-4xl font-light mb-4">
-          Find out about the Nano-tech air
-        </h2>
-
-        <p className="uppercase text-xs tracking-widest text-gray-400">
-          Breathe easy with top-rated nano-tech air purifiers
-        </p>
-
-      </section>
-
-
-      {/* ================= PRODUCT + FEATURES ================= */}
-      <section className="py-20 px-4">
-
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 items-center">
-
-          {/* Left Features */}
-          <div className="space-y-12">
-
-            <Feature
-              icon={<Clock />}
-              title="Fast"
-              text="Filters virus, bacteria and smells in just 5 minutes"
-            />
-
-            <Feature
-              icon={<ShieldCheck />}
-              title="Patented Technology"
-              text="Certified performance by leading laboratories"
-            />
-
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/60 to-slate-900/80" />
           </div>
 
+          {/* Content */}
+          <div className="relative z-10 text-center max-w-4xl px-6 animate-fade-up">
 
-          {/* Product Image */}
-          <div className="flex justify-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              About <span className="text-green-400">AeroPure</span>
+            </h1>
 
-            <div className="relative w-[220px] h-[420px]">
+            <p className="text-xl text-slate-200 leading-relaxed">
+              Creating healthier spaces with premium air filtration solutions
+              trusted across Mumbai and beyond.
+            </p>
+
+          </div>
+        </section>
+
+
+
+        {/* ================= INTRO ================= */}
+        <section className="py-28">
+
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Text */}
+            <div className="animate-slide-left">
+
+              <h2 className="text-4xl font-bold mb-6">
+                Who We Are
+              </h2>
+
+              <p className="text-slate-600 leading-relaxed mb-6">
+                AeroPure is a leading supplier of premium air purifier filters
+                for homes, offices, clinics, and industries. We focus on quality,
+                affordability, and long-term customer trust.
+              </p>
+
+              <p className="text-slate-600 leading-relaxed">
+                Founded with a vision to make clean air accessible to everyone,
+                we have built strong relationships with clients through
+                transparency, service, and performance.
+              </p>
+
+            </div>
+
+
+            {/* Image */}
+            <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-xl animate-slide-right">
 
               <Image
-                src="/airpurifier.jpg" // Replace with purifier image
-                alt="AeroPure Device"
+                src="/airpurifier.jpg"
+                alt="AeroPure Product"
                 fill
-                className="object-contain"
+                className="object-cover"
               />
 
             </div>
 
           </div>
 
+        </section>
 
-          {/* Right Features */}
-          <div className="space-y-12">
 
-            <Feature
-              icon={<Layers />}
-              title="Innovative Design"
-              text="No filter replacement, safer and cleaner"
-            />
 
-            <Feature
-              icon={<Zap />}
-              title="Use Anywhere - 30m³"
-              text="Perfect for homes, offices, cars and clinics"
-            />
+        {/* ================= STATS ================= */}
+        <section className="py-24 bg-slate-50">
+
+          <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+            {[
+              { label: "Years Experience", value: "5+" },
+              { label: "Happy Clients", value: "1000+" },
+              { label: "Products Delivered", value: "50K+" },
+              { label: "Cities Covered", value: "20+" },
+            ].map((item, i) => (
+
+              <div
+                key={i}
+                className="bg-white rounded-2xl p-8 shadow hover:shadow-xl transition animate-fade-up"
+              >
+
+                <h3 className="text-4xl font-bold text-blue-600 mb-2">
+                  {item.value}
+                </h3>
+
+                <p className="text-slate-600 text-sm">
+                  {item.label}
+                </p>
+
+              </div>
+
+            ))}
 
           </div>
 
-        </div>
-
-      </section>
+        </section>
 
 
-      {/* ================= BRAND MESSAGE ================= */}
-      <section className="py-28 bg-slate-50 text-center px-4">
 
-        <div className="max-w-4xl mx-auto">
+        {/* ================= MISSION / VISION ================= */}
+        <section className="py-28">
 
-          <h3 className="text-3xl font-light mb-6">
-            Why AeroPure?
-          </h3>
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-12">
 
-          <p className="text-gray-600 leading-relaxed text-lg">
+            {/* Mission */}
+            <div className="bg-gradient-to-br from-blue-50 to-green-50 p-10 rounded-3xl shadow animate-slide-left">
 
-            At AeroPure, we believe clean air is a fundamental right.
-            Our advanced filtration systems are designed to protect
-            families, workplaces, and communities across India.
+              <div className="flex items-center gap-4 mb-5">
 
-            <br /><br />
+                <Target className="text-blue-600" size={32} />
 
-            With innovation, quality, and trust at our core,
-            we continue delivering reliable air purification solutions
-            for healthier living.
+                <h3 className="text-2xl font-bold">
+                  Our Mission
+                </h3>
 
-          </p>
+              </div>
 
-        </div>
+              <p className="text-slate-600 leading-relaxed">
+                To deliver reliable, high-performance air filtration solutions
+                that enhance quality of life and create healthier environments.
+              </p>
 
-      </section>
-
-    </div>
-  );
-}
+            </div>
 
 
-/* ================= FEATURE COMPONENT ================= */
+            {/* Vision */}
+            <div className="bg-gradient-to-br from-green-50 to-blue-50 p-10 rounded-3xl shadow animate-slide-right">
 
-function Feature({ icon, title, text }) {
-  return (
-    <div className="text-center lg:text-left">
+              <div className="flex items-center gap-4 mb-5">
 
-      <div className="flex justify-center lg:justify-start mb-4 text-gray-800">
-        {icon}
-      </div>
+                <Leaf className="text-green-600" size={32} />
 
-      <h4 className="font-semibold mb-2 tracking-wide uppercase text-sm">
-        {title}
-      </h4>
+                <h3 className="text-2xl font-bold">
+                  Our Vision
+                </h3>
 
-      <p className="text-gray-600 text-sm leading-relaxed">
-        {text}
-      </p>
+              </div>
 
-    </div>
+              <p className="text-slate-600 leading-relaxed">
+                To become India’s most trusted air purification partner through
+                innovation, sustainability, and service excellence.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        {/* ================= VALUES ================= */}
+        <section className="py-28 bg-slate-900 text-white">
+
+          <div className="max-w-7xl mx-auto px-6">
+
+            <div className="text-center mb-20 animate-fade-up">
+
+              <h2 className="text-4xl font-bold mb-4">
+                Our Core Values
+              </h2>
+
+              <p className="text-slate-300">
+                What makes AeroPure different
+              </p>
+
+            </div>
+
+
+            <div className="grid md:grid-cols-3 gap-8">
+
+              {[
+                {
+                  title: "Quality First",
+                  text: "We never compromise on product performance.",
+                  icon: ShieldCheck,
+                },
+                {
+                  title: "Customer Trust",
+                  text: "Long-term partnerships over short-term gains.",
+                  icon: Users,
+                },
+                {
+                  title: "Continuous Growth",
+                  text: "Always improving systems and services.",
+                  icon: TrendingUp,
+                },
+              ].map((item, i) => (
+
+                <div
+                  key={i}
+                  className="bg-slate-800 rounded-2xl p-8 text-center hover:-translate-y-2 transition animate-fade-up"
+                >
+
+                  <div className="w-14 h-14 mx-auto mb-5 rounded-xl bg-gradient-to-r from-blue-600 to-green-600 flex items-center justify-center">
+
+                    <item.icon className="text-white" size={26} />
+
+                  </div>
+
+                  <h4 className="text-xl font-semibold mb-3">
+                    {item.title}
+                  </h4>
+
+                  <p className="text-slate-400 text-sm">
+                    {item.text}
+                  </p>
+
+                </div>
+
+              ))}
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        {/* ================= FOUNDER ================= */}
+        <section className="py-28">
+
+          <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+
+            {/* Image */}
+            <div className="relative h-[420px] rounded-3xl overflow-hidden shadow-xl animate-slide-left">
+
+              <Image
+                src="/zahid.jpg"
+                alt="Founder"
+                fill
+                className="object-cover"
+              />
+
+            </div>
+
+
+            {/* Text */}
+            <div className="animate-slide-right">
+
+              <h2 className="text-4xl font-bold mb-4">
+                Meet Our Founder
+              </h2>
+
+              <h3 className="text-2xl text-green-600 font-semibold mb-4">
+                Zaheed Shaikh
+              </h3>
+
+              <p className="text-slate-600 leading-relaxed mb-6">
+                With years of experience in air filtration and customer service,
+                Zaheed founded AeroPure with a mission to deliver reliable,
+                affordable, and high-quality purification solutions.
+              </p>
+
+              <p className="text-slate-600 leading-relaxed">
+                His leadership focuses on innovation, ethics, and long-term
+                customer satisfaction.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+
+        {/* ================= CTA ================= */}
+        <section className="py-24 ml-25 mr-25 mb-15  rounded-xl shadow-md bg-gradient-to-br from-blue-600 to-green-600 text-white text-center">
+
+          <div className="max-w-4xl mx-auto px-6 animate-fade-up">
+
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Breathe Better?
+            </h2>
+
+            <p className="text-lg mb-8">
+              Partner with AeroPure for cleaner, healthier air solutions.
+            </p>
+
+            <a
+              href="/contact"
+              className="inline-block bg-white text-slate-900 px-10 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition"
+            >
+              Contact Us Today
+            </a>
+
+          </div>
+
+        </section>
+
+      </main>
+
+      <Footer />
+    </>
   );
 }

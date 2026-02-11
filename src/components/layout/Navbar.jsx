@@ -9,17 +9,13 @@ import Image from "next/image";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  
 
   const pathname = usePathname();
 
   /* Detect Scroll */
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = window.innerHeight * 0.8;
-
       setIsScrolled(window.scrollY > 20);
-     
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -36,24 +32,25 @@ export default function Navbar() {
   ];
 
   return (
- <nav
-  className={`
-    fixed top-0 left-0 w-full z-50 transition-all duration-300
-    ${
-      isScrolled
-        ? "bg-white/90 backdrop-blur-xl shadow-lg"
-        : "bg-transparent"
-    }
-    hover:bg-white/90
-  `}
->
+    <nav
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-all duration-300
 
+        /* Mobile */
+        bg-white shadow-md
+
+        /* Desktop */
+        md:${
+          isScrolled
+            ? "bg-white/90 backdrop-blur-xl shadow-md"
+            : "bg-transparent"
+        }
+      `}
+    >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between py-3">
-
           {/* ===== LOGOS ===== */}
           <Link href="/" className="flex items-center">
-
             {/* Logo 1 */}
             <Image
               src="/logo3.png"
@@ -68,27 +65,15 @@ export default function Navbar() {
             <Image
               src="/logo2.png"
               alt="AeroPure Partner Logo"
-              width={150}
+              width={160}
               height={140}
               priority
               className="scale-170 mt-5 transition"
             />
-
-            {/* Text */}
-            {/* <div className="leading-tight ml-1">
-              <p className="text-xl font-bold bg-gradient-to-r from-blue-700 to-green-600 bg-clip-text text-transparent">
-                AeroPure
-              </p>
-              <p className="text-[11px] text-gray-500">
-                Pure Air. Every Day.
-              </p>
-            </div> */}
-
           </Link>
 
           {/* ===== DESKTOP MENU ===== */}
           <div className="hidden md:flex items-center gap-2">
-
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -105,15 +90,16 @@ export default function Navbar() {
                 {link.name}
 
                 {isActive(link.path) && (
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-[3px]
-                                   bg-gradient-to-r from-blue-600 to-green-500 rounded-full" />
+                  <span
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-[3px]
+                    bg-gradient-to-r from-blue-600 to-green-500 rounded-full"
+                  />
                 )}
               </Link>
             ))}
-
           </div>
 
-          {/* ===== CALL BUTTON ===== */}
+          {/* ===== CALL BUTTON (DESKTOP) ===== */}
           <div className="hidden md:block">
             <a
               href="tel:+918591401114"
@@ -135,7 +121,6 @@ export default function Navbar() {
           >
             {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
-
         </div>
       </div>
 
@@ -147,7 +132,6 @@ export default function Navbar() {
         `}
       >
         <div className="bg-white border-t px-4 py-5 space-y-2">
-
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -158,7 +142,7 @@ export default function Navbar() {
                 ${
                   isActive(link.path)
                     ? "bg-blue-600 text-white"
-                    : "text-gray-700 hover:bg-blue-50"
+                    : "text-gray-700 hover:bg-gray-100"
                 }
               `}
             >
@@ -178,7 +162,6 @@ export default function Navbar() {
             <Phone size={18} />
             Call Now
           </a>
-
         </div>
       </div>
     </nav>
