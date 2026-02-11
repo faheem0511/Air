@@ -9,7 +9,6 @@ import {
   CheckCircle,
   MessageCircle,
 } from "lucide-react";
-
 import { toast } from "sonner";
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
